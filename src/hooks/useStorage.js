@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { imageStorage } from '../firebase/firebase'
+import { galleryStorage } from '../firebase/config'
 
 const useStorage = (image) => {
     const [progress, setProgress] = useState(0)
@@ -8,7 +8,7 @@ const useStorage = (image) => {
 
     useEffect(() => {
         // Create a storage reference from our storage service
-        const storageRef = imageStorage.ref(image.name)
+        const storageRef = galleryStorage.ref(image.name)
 
         storageRef.put(image).on(
             'state_changed',

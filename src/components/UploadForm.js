@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ProgressBar from './ProgressBar'
 
 const UploadForm = () => {
     const [image, setImage] = useState(null)
@@ -34,6 +35,7 @@ const UploadForm = () => {
             <div className='output'>
                 {error && <div className='error'>{error}</div>}
                 {image && <div>{image.name}</div>}
+                {image && <ProgressBar image={image} setImage={setImage} />}
             </div>
         </form>
     )

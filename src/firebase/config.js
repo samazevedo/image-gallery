@@ -1,6 +1,7 @@
-import * as firebase from 'firebase'
-import 'firebase/storage'
-import 'firebase/firestore'
+import firebase from 'firebase/compat/app'
+import 'firebase/auth'
+import 'firebase/compat/firestore'
+import 'firebase/compat/storage'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -13,9 +14,9 @@ const firebaseConfig = {
 }
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig)
+const firebaseApp = firebase.initializeApp(firebaseConfig)
 
-const galleryStorage = firebase.storage()
-const galleryFirestore = firebase.firestore()
+// firebase for auth and db
 
-export { galleryStorage, galleryFirestore }
+export const galleryStorage = firebaseApp.storage()
+export const galleryFirestore = firebaseApp.firestore()

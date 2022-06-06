@@ -2,7 +2,7 @@ import { MainStyled } from './App.styled'
 import { GlobalStyled } from './shared/Global.js'
 import { ThemeProvider } from 'styled-components'
 import { theme } from '././shared/theme.js'
-import UploadForm from './firebase/UploadForm'
+import UploadForm from './components/UploadForm'
 function App() {
     return (
         <ThemeProvider theme={theme}>
