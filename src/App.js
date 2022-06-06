@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { MainStyled } from './App.styled'
+import { GlobalStyled } from './shared/Global.js'
+import { ThemeProvider } from 'styled-components'
+import { theme } from '././shared/theme.js'
+import UploadForm from './firebase/UploadForm'
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <ThemeProvider theme={theme}>
+            <MainStyled>
+                <GlobalStyled />
+                <h1>Gallery</h1>
+                <h2>My Gallery</h2>
+                <p>A collection of images of you and me.</p>
+                <UploadForm />
+            </MainStyled>
+        </ThemeProvider>
+    )
 }
 
-export default App;
+export default App
