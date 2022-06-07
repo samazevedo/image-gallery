@@ -1,10 +1,16 @@
+import { useEffect } from 'react'
 import useStorage from '../hooks/useStorage'
 import { ProgressBarStyled } from './ProgressBar.styled'
 const ProgressBar = ({ image, setImage }) => {
-    const { progress, url } = useStorage(image)
-    console.log(progress, url)
+    const { url, progress } = useStorage(image)
 
-    return <ProgressBarStyled progress={progress}>Progress</ProgressBarStyled>
+    useEffect(() => {
+        if (url) {
+            setImage(null)
+        }
+    }, [url, setImage])
+
+    return <ProgressBarStyled progress={progress} />
 }
 
 export default ProgressBar

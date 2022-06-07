@@ -1,8 +1,9 @@
 import firebase from 'firebase/compat/app'
+//import { serverTimestamp } from 'firebase/compat/firestore'
 import 'firebase/auth'
 import 'firebase/compat/firestore'
 import 'firebase/compat/storage'
-
+import 'firebase/compat/serverTimestamp'
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: 'AIzaSyBDqTqBhTPgQDTUJzrMBsI7KB49Wxdv13U',
@@ -16,7 +17,10 @@ const firebaseConfig = {
 // Initialize Firebase
 const firebaseApp = firebase.initializeApp(firebaseConfig)
 
-// firebase for auth and db
+// update the timestamp field with the value form the server
 
+// firebase for auth and db
 export const galleryStorage = firebaseApp.storage()
 export const galleryFirestore = firebaseApp.firestore()
+//export const timestamp = firebase.firestore.FieldValue.serverTimestamp
+export const timestamp;

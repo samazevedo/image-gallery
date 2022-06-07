@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { galleryStorage } from '../firebase/config'
+import { galleryStorage, galleryFirestore, timestamp } from '../firebase/config'
 
 const useStorage = (image) => {
     const [progress, setProgress] = useState(0)
@@ -10,6 +10,8 @@ const useStorage = (image) => {
         // Create a storage reference from our storage service
         const storageRef = galleryStorage.ref(image.name)
 
+        // Upload file and metadata to the object 'images/mountains.jpg'
+        const collectionRef = galleryFirestore.collection('images')
         storageRef.put(image).on(
             'state_changed',
             (snapshot) => {
@@ -25,6 +27,8 @@ const useStorage = (image) => {
             },
             async () => {
                 const url = await storageRef.getDownloadURL()
+                const createdAt = timestamp()
+                collectionRef.add({ url, createdAt })
                 setUrl(url)
             }
         )

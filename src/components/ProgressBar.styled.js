@@ -3,9 +3,9 @@ import styled from 'styled-components'
 export const ProgressBarStyled = styled.div`
     position: absolute;
     width: 100%;
-    max-width: 30rem;
-    height: 0.2rem;
-    background-color: ${({ theme }) => theme.colors.tertiary};
+    max-width: 25rem;
+    height: 0.1rem;
+    background-color: ${({ theme }) => theme.colors.quinary};
     margin-top: 2rem;
     width: ${({ progress }) => progress + '%'};
     text-align: center;
