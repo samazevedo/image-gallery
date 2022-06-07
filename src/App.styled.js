@@ -2,8 +2,7 @@ import styled from 'styled-components'
 
 export const MainStyled = styled.main`
     display: grid;
-    grid-template-rows: 1fr auto;
-    align-items: center;
+    grid-template-rows: 1fr 0.5fr 1fr 3fr;
     justify-items: center;
     & h1 {
         position: fixed;
