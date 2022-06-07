@@ -2,8 +2,8 @@ export const theme = {
     colors: {
         primary: '#0070f3',
         secondary: '#ADADAD',
-        tertiary: '#f3f3f3',
-        quaternary: '#f3f3f3',
+        tertiary: '#99FF59',
+        quaternary: '#FFCED6',
         quinary: '#f3f3f3',
         senary: '#f3f3f3',
         septenary: '#f3f3f3',

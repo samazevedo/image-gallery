@@ -2,19 +2,22 @@ import styled from 'styled-components'
 
 export const MainStyled = styled.main`
     display: grid;
+    grid-template-rows: 1fr auto;
     align-items: center;
+    justify-items: center;
     & h1 {
+        position: fixed;
+        top: 1%;
+        left: 2%;
         font-size: ${(props) => props.theme.fontSizes.large};
         color: ${(props) => props.theme.colors.primary};
     }
     & h2 {
         font-size: ${(props) => props.theme.fontSizes.xxlarge};
-        text-align: center;
         color: ${(props) => props.theme.colors.secondary};
         margin-top: 10vh;
     }
     & p {
-        text-align: center;
         font-size: ${(props) => props.theme.fontSizes.large};
     }
 `
